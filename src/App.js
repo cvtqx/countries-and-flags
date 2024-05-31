@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import FilterButton from './components/FilterButton';
-import SearchInput from './components/SearchInput';
+import FilterButton from './components/UI/FilterButton';
+import SearchInput from './components/UI/SearchInput';
 import FlagsList from './components/Flags/FlagsList';
 
-import Header from './components/Header';
+import Header from './components/UI/Header';
 import { Col, Row, Container } from 'reactstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -13,6 +13,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
   const [region, setRegion] = useState(null);
+  const [theme, setTheme] = useState('light');
 
   const fetchAllCountries = async () => {
     try {
@@ -81,9 +82,19 @@ function App() {
     }
   }, [input, region]);
 
+  //toggle theme
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
+  };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme])
+
   return (
     <>
-      <Header />
+      <Header toggleTheme={toggleTheme} theme={theme} />
       <Container>
         <Row className='m-5'>
           <Col

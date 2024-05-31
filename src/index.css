@@ -18,11 +18,6 @@
   background-color: var(--clr-very-light-gray);
 }
 
-input.form-control, button.btn{
-  border: none;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
-}
 
 button.btn:focus{
   background-color: var(--clr-dark-gray);
@@ -34,25 +29,30 @@ div.card{
   box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
 }
 
+/* light theme */
+input.form-control, button.btn{
+  border: none;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
+}
 
+body{
+  background-color: var(--clr-very-light-gray);
+  color: var(--clr-very-dark-blue-text);
+}
 
-ul{
-list-style: none;
+/* dark theme */
+body.dark{
+  background-color: var(--clr-very-dark-blue-background);
+  color: var(--clr-very-light-gray)
+}
+
+input.form-control.dark, button.btn.dark{
+  border: none;
+  background-color: var(--clr-dark-gray);
 }
 
 
 
-ul, li{
-  margin: 0; 
-  padding: 0 !important;
-  
-}
 
-
-
-
-
-/* div .card-body{
-  background-color: red;
-} */
 

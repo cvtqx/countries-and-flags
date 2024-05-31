@@ -15,6 +15,13 @@ This is a solution to the [REST Countries API with color theme switcher challeng
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
+## TO DO
+
+-dark/light theme
+-single card page desktop
+-single card page mobile
+-border countries buttons
+
 
 ## Overview
 
