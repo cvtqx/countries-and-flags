@@ -14,14 +14,11 @@ function App() {
   const [input, setInput] = useState('');
   const [region, setRegion] = useState(null);
 
-
-  console.log('COUNTIRES', countries);
-
   const fetchAllCountries = async () => {
     try {
       const response = await axios.get('https://restcountries.com/v3.1/all');
       setCountries(response.data);
-      console.log('fetched all')
+      console.log('fetched all');
     } catch (error) {
       console.error('Error fetching countries', error);
     }
@@ -36,14 +33,13 @@ function App() {
             country.region === region &&
             country.name.common.toLowerCase().startsWith(input)
         );
-        setCountries(result)
+        setCountries(result);
       } else {
-         const result = response.data.filter((country) =>
-           country.name.common.toLowerCase().startsWith(input)
-         );
-         setCountries(result);
+        const result = response.data.filter((country) =>
+          country.name.common.toLowerCase().startsWith(input)
+        );
+        setCountries(result);
       }
-     
     } catch (error) {
       console.error('Countries could not be found', error);
     }
@@ -54,15 +50,17 @@ function App() {
       const response = await axios.get('https://restcountries.com/v3.1/all');
       if (input) {
         const result = response.data.filter(
-          (country) => country.region === region && country.name.common.toLowerCase().startsWith(input));
+          (country) =>
+            country.region === region &&
+            country.name.common.toLowerCase().startsWith(input)
+        );
         setCountries(result);
       } else {
-          const result = response.data.filter(
-            (country) => country.region === region
-          );
-          setCountries(result);
+        const result = response.data.filter(
+          (country) => country.region === region
+        );
+        setCountries(result);
       }
-    
     } catch (error) {
       console.error('Countries could not be found', error);
     }
@@ -73,28 +71,15 @@ function App() {
     fetchAllCountries();
   }, []);
 
-  //search by input value
   useEffect(() => {
     if (input) {
       searchCountries();
     } else if (region) {
-      filterByRegion()
-    }
-  else {
+      filterByRegion();
+    } else {
       fetchAllCountries();
     }
-    
   }, [input, region]);
-
-  //filter by region
-  // useEffect(() => {
-  //   if (region) {
-  //     filterByRegion();
-  //   } else {
-  //     fetchAllCountries()
-  //   }
-     
-  // }, [region]);
 
   return (
     <>
