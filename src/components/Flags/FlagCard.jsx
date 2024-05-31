@@ -1,36 +1,41 @@
-import React from 'react'
+import React from 'react';
 import { Card, CardBody, CardText, CardTitle } from 'reactstrap';
 
-const FlagCard = () => {
+const FlagCard = ({country}) => {
   return (
     <Card
-      
       className='my-2'
       style={{
-        width: '18rem',
-        overflow:'hidden',
+        width: '100%',
+        maxWidth: '296px',
+        height: '337px',
+        overflow: 'hidden',
       }}>
       <img
-        alt='Flag'
-        src='https://picsum.photos/300/200'
+        alt={`Flag of ${country.name.common}`}
+        src={country.flags.svg}
         width='100%'
+        height='145px'
       />
       <CardBody>
-        <CardTitle tag='h5'>Country Name</CardTitle>
+        <CardTitle
+          tag='h5'
+          style={{ fontWeight: 'bold' }}>
+          {country.name.common}
+        </CardTitle>
         <CardText>
-          <p>
-            <span>Population:</span>
-          </p>
-          <p>
-            <span>Region:</span>
-          </p>
-          <p>
-            <span>Capital:</span>
-          </p>
+          <span style={{ fontWeight: 'bold' }}>Population:</span>{' '}
+          {country.population} people.
+        </CardText>
+        <CardText>
+          <span style={{ fontWeight: 'bold' }}>Region:</span> {country.region}
+        </CardText>
+        <CardText>
+          <span style={{ fontWeight: 'bold' }}>Capital:</span> {country.capital}
         </CardText>
       </CardBody>
     </Card>
   );
-}
+};
 
-export default FlagCard
+export default FlagCard;

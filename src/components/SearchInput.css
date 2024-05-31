@@ -1,5 +1,6 @@
 .searchInput-container{
     position: relative;
+    border: none;
 }
 
 .searchInput-icon{
@@ -11,6 +12,7 @@
   top:40%;
   left:2px;
   transform: translateY(-50%);
+  background-color: transparent;
 }
 
 .searchInput-content{

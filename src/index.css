@@ -17,3 +17,42 @@
   font-family: "Nunito Sans", sans-serif;
   background-color: var(--clr-very-light-gray);
 }
+
+input.form-control, button.btn{
+  border: none;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
+}
+
+button.btn:focus{
+  background-color: var(--clr-dark-gray);
+
+}
+
+div.card{
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
+}
+
+
+
+ul{
+list-style: none;
+}
+
+
+
+ul, li{
+  margin: 0; 
+  padding: 0 !important;
+  
+}
+
+
+
+
+
+/* div .card-body{
+  background-color: red;
+} */
+
