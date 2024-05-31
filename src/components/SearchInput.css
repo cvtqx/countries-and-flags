@@ -1,0 +1,29 @@
+.searchInput-container{
+    position: relative;
+}
+
+.searchInput-icon{
+     height: 1.5rem;
+  width: 1.5rem;
+  padding: 5px;
+  position: absolute;
+  box-sizing:border-box;
+  top:40%;
+  left:2px;
+  transform: translateY(-50%);
+}
+
+.searchInput-content{
+    
+  box-sizing:border-box;
+  padding-left: 1.5rem;
+  text-align:right;
+}
+
+input::placeholder{
+    text-align: right;
+}
+
+input::-ms-input-placeholder{
+    text-align: right;
+}

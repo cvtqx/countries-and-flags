@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import FilterButton from './components/FilterButton';
+import SearchInput from './components/SearchInput';
+import FlagsList from './components/Flags/FlagsList';
+
+import Header from './components/Header';
+import { Container, Col, Row } from 'reactstrap';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Row className='m-5'>
+        <Col
+          sm='12'
+          md='6'>
+          <SearchInput />
+        </Col>
+        <Col
+          sm='12'
+          md='6'>
+          <FilterButton />
+        </Col>
+      </Row>
+
+      <FlagsList />
+    </>
   );
 }
 
