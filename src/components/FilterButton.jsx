@@ -6,28 +6,44 @@ import {
   DropdownItem,
 } from 'reactstrap';
 
-const FilterButton = () => {
+const FilterButton = ({region, setRegion}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+  const handleSelect = (selectedRegion) => {
+    setRegion(selectedRegion);
+    console.log(region)
+  };
+
   return (
     <Dropdown
       isOpen={dropdownOpen}
-          toggle={toggle}
-          className='mt-2'
-      >
+      toggle={toggle}
+      className='mt-2'>
       <DropdownToggle
         caret
         color='secondary'
         outline>
-        Filter by region
+        {region ? region : 'Select region'}
       </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem>Africa</DropdownItem>
-        <DropdownItem>America</DropdownItem>
-        <DropdownItem>Asia</DropdownItem>
-        <DropdownItem>Europe</DropdownItem>
-        <DropdownItem>Oceania</DropdownItem>
+        <DropdownItem onClick={() => handleSelect('Africa')}>
+          Africa
+        </DropdownItem>
+        <DropdownItem onClick={() => handleSelect('Americas')}>
+          Americas
+        </DropdownItem>
+        <DropdownItem onClick={() => handleSelect('Asia')}>Asia</DropdownItem>
+        <DropdownItem onClick={() => handleSelect('Europe')}>
+          Europe
+        </DropdownItem>
+        <DropdownItem onClick={() => handleSelect('Oceania')}>
+          Oceania
+        </DropdownItem>
+        <DropdownItem onClick={() => handleSelect(null)}>
+          All
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );
