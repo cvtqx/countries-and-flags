@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FlagCard from './FlagCard';
 import { Row, Col } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 const FlagsList = ({countries}) => {
   
@@ -12,7 +13,11 @@ const FlagsList = ({countries}) => {
           sm='12'
           md='6'
           lg='3'>
-          <FlagCard country={country} />
+          <Link
+            to={`/country/${country.cca3}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            <FlagCard country={country} />
+          </Link>
         </Col>
       ))}
     </Row>

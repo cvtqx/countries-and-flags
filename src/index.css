@@ -21,7 +21,6 @@
 
 button.btn:focus{
   background-color: var(--clr-dark-gray);
-
 }
 
 div.card{
@@ -34,6 +33,7 @@ input.form-control, button.btn{
   border: none;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
+  color: var(--clr-very-dark-blue-text);
 }
 
 body{

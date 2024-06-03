@@ -21,6 +21,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 -single card page desktop
 -single card page mobile
 -border countries buttons
+-add display 20 and next button
 
 
 ## Overview

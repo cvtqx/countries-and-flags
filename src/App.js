@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import FilterButton from './components/UI/FilterButton';
 import SearchInput from './components/UI/SearchInput';
 import FlagsList from './components/Flags/FlagsList';
@@ -8,6 +7,9 @@ import Header from './components/UI/Header';
 import { Col, Row, Container } from 'reactstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CountryDetail from './components/pages/CountryDetail';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -94,7 +96,10 @@ function App() {
 
   return (
     <>
-      <Header toggleTheme={toggleTheme} theme={theme} />
+      <Header
+        toggleTheme={toggleTheme}
+        theme={theme}
+      />
       <Container>
         <Row className='m-5'>
           <Col
@@ -114,8 +119,16 @@ function App() {
             />
           </Col>
         </Row>
-
-        <FlagsList countries={countries} />
+        <Router>
+          <Routes>
+            <Route
+              path='/'
+              element={<FlagsList countries={countries} />}></Route>
+            <Route
+              path='/country/:countryId'
+              element={<CountryDetail countries={countries} />}></Route>
+          </Routes>
+        </Router>
       </Container>
     </>
   );
