@@ -18,10 +18,9 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 ## TO DO
 
 -dark/light theme
--single card page desktop
--single card page mobile
--border countries buttons
--add display 20 and next button
+-add display 20 and next button to flagslist
+-format population number
+-fix page reload when clicking back button and returning to home page, isClicked must be set to false
 
 
 ## Overview
@@ -39,7 +38,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+Desktop view:
+![](./images/country-desktop.png)
+![](./images/home-desktop.png)
+
+Mobile view:
+![](./images/country-mobile.png)
+![](./images/country-mobile.png)
 
 
 ### Links
@@ -57,13 +62,10 @@ Users should be able to:
 - React Router
 
 
-
 ### What I learned
 
 
-
 ### Continued development
-
 
 
 ### Useful resources

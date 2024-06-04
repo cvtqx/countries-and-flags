@@ -3,8 +3,7 @@ import FlagCard from './FlagCard';
 import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const FlagsList = ({countries}) => {
-  
+const FlagsList = ({ countries,  handleClick }) => {
   return (
     <Row className='m-5'>
       {countries.map((country, index) => (
@@ -16,7 +15,10 @@ const FlagsList = ({countries}) => {
           <Link
             to={`/country/${country.cca3}`}
             style={{ textDecoration: 'none', color: 'inherit' }}>
-            <FlagCard country={country} />
+            <FlagCard
+              country={country}
+              onClick={handleClick}
+            />
           </Link>
         </Col>
       ))}

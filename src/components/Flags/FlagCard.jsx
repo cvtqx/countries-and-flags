@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardText, CardTitle } from 'reactstrap';
 
-const FlagCard = ({country}) => {
+const FlagCard = ({ country, onClick }) => {
   return (
     <Card
       className='my-2'
@@ -10,8 +10,10 @@ const FlagCard = ({country}) => {
         maxWidth: '296px',
         height: '337px',
         overflow: 'hidden',
-      }}>
+      }}
+      onClick={onClick}>
       <img
+        className='flagCard-img'
         alt={`Flag of ${country.name.common}`}
         src={country.flags.svg}
         width='100%'
@@ -25,7 +27,7 @@ const FlagCard = ({country}) => {
         </CardTitle>
         <CardText>
           <span style={{ fontWeight: 'bold' }}>Population:</span>{' '}
-          {country.population} people.
+          {country.population} people
         </CardText>
         <CardText>
           <span style={{ fontWeight: 'bold' }}>Region:</span> {country.region}

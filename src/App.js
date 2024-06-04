@@ -9,19 +9,20 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import CountryDetail from './components/pages/CountryDetail';
+import CountryDetail from './pages/CountryDetail';
 
 function App() {
   const [countries, setCountries] = useState([]);
   const [input, setInput] = useState('');
   const [region, setRegion] = useState(null);
   const [theme, setTheme] = useState('light');
+  const [isClicked, setIsClicked] = useState(false);
 
   const fetchAllCountries = async () => {
+    setIsClicked(false) //WHY IS THIS NOT WORKING????
     try {
       const response = await axios.get('https://restcountries.com/v3.1/all');
       setCountries(response.data);
-      console.log('fetched all');
     } catch (error) {
       console.error('Error fetching countries', error);
     }
@@ -87,12 +88,18 @@ function App() {
   //toggle theme
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'))
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
+
 
   useEffect(() => {
     document.body.className = theme;
-  }, [theme])
+  }, [theme]);
+
+  const handleClick = () => {
+    console.log('handleClick');
+    setIsClicked(true);
+  };
 
   return (
     <>
@@ -101,32 +108,46 @@ function App() {
         theme={theme}
       />
       <Container>
-        <Row className='m-5'>
-          <Col
-            sm='12'
-            md='6'>
-            <SearchInput
-              input={input}
-              setInput={setInput}
-            />
-          </Col>
-          <Col
-            sm='12'
-            md='6'>
-            <FilterButton
-              region={region}
-              setRegion={setRegion}
-            />
-          </Col>
-        </Row>
+        {!isClicked && (
+          <Row className='m-5'>
+            <Col
+              sm='12'
+              md='6'>
+              <SearchInput
+                input={input}
+                setInput={setInput}
+              />
+            </Col>
+            <Col
+              sm='12'
+              md='6'>
+              <FilterButton
+                region={region}
+                setRegion={setRegion}
+              />
+            </Col>
+          </Row>
+        )}
+
         <Router>
           <Routes>
             <Route
               path='/'
-              element={<FlagsList countries={countries} />}></Route>
+              element={
+                <FlagsList
+                  countries={countries}
+                  isClicked={isClicked}
+                  handleClick={handleClick}
+                />
+              }></Route>
             <Route
               path='/country/:countryId'
-              element={<CountryDetail countries={countries} />}></Route>
+              element={
+                <CountryDetail
+                  countries={countries}
+                  setIsClicked={setIsClicked}
+                />
+              }></Route>
           </Routes>
         </Router>
       </Container>

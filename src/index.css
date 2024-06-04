@@ -23,9 +23,35 @@ button.btn:focus{
   background-color: var(--clr-dark-gray);
 }
 
+button.btn.button-back{
+  width: 8rem;
+  margin: 1rem;
+}
+
+button.btn.borderCountries-button{
+width: 30%;
+font-size:small;
+margin-top: 1rem;
+margin-left: 0.5rem
+}
+
 div.card{
   border: none;
   box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
+}
+
+
+.countryDetail-img{
+  height: 200px;
+}
+
+@media screen and (min-width: 600px) {
+  .countryDetail-img{
+  height: 280px;
+}
+button.btn.borderCountries-button{
+  margin-top:0;
+}
 }
 
 /* light theme */
