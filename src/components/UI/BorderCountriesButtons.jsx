@@ -22,9 +22,9 @@ const BorderCountriesButtons = ({ borders, countries }) => {
         {borderCountries.map((borderCountry) => (
           <Button
             className='borderCountries-button'
-            key={`btn-${borderCountry.alpha3Code}`}
-            onClick={() => navigate(`/country/${borderCountry.alpha3Code}`)}>
-            {borderCountry.name}
+            key={`btn-${borderCountry?.alpha3Code}`}
+            onClick={() => navigate(`/country/${borderCountry?.alpha3Code}`)}>
+            {borderCountry?.name}
           </Button>
         ))}
       </Col>

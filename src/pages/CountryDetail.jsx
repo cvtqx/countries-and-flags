@@ -17,10 +17,12 @@ const CountryDetail = ({ countries, setIsClicked }) => {
 
   // const nativeName = country?.name?.nativeName
   // console.log(nativeName)
-  const currencies = country?.currencies.map(currency => currency.code);
-  const languages = country?.languages.map(language => language.name)
+  const currencies = country?.currencies
+    .map((currency) => currency.code)
+    .join(', ');
+  const languages = country?.languages.map(language => language.name).join(', ')
   const borderCountries = country?.borders;
-  console.log(borderCountries);
+  console.log(languages);
 
   return (
     <>
