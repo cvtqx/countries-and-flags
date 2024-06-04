@@ -13,16 +13,14 @@ const CountryDetail = ({ countries, setIsClicked }) => {
   };
 
   const country = countries.find((country) => country.alpha3Code === countryId);
-  console.log(country);
 
-  // const nativeName = country?.name?.nativeName
-  // console.log(nativeName)
   const currencies = country?.currencies
     .map((currency) => currency.code)
     .join(', ');
-  const languages = country?.languages.map(language => language.name).join(', ')
+  const languages = country?.languages
+    .map((language) => language.name)
+    .join(', ');
   const borderCountries = country?.borders;
-  console.log(languages);
 
   return (
     <>
@@ -61,7 +59,6 @@ const CountryDetail = ({ countries, setIsClicked }) => {
               <p>
                 <span style={{ fontWeight: 'bold' }}>Native Name:</span>{' '}
                 {country?.nativeName}
-
               </p>
               <p>
                 <span style={{ fontWeight: 'bold' }}>Population:</span>{' '}
