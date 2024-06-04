@@ -8,7 +8,7 @@ import { Col, Row, Container } from 'reactstrap';
 import { useEffect, useState } from 'react';
 import countriesData from './data.json';
 
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import CountryDetail from './pages/CountryDetail';
 
 function App() {
@@ -18,8 +18,11 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [isClicked, setIsClicked] = useState(false);
 
+  const location = useLocation();
+
+  console.log(isClicked)
   const fetchAllCountries = async () => {
-    setIsClicked(false) //WHY IS THIS NOT WORKING????
+   //WHY IS THIS NOT WORKING????
     try {
       setCountries(countriesData);
     } catch (error) {
@@ -72,6 +75,7 @@ function App() {
     fetchAllCountries();
   }, []);
 
+  //search and filter functions
   useEffect(() => {
     if (input) {
       searchCountries();
@@ -83,11 +87,9 @@ function App() {
   }, [input, region]);
 
   //toggle theme
-
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
   };
-
 
   useEffect(() => {
     document.body.className = theme;
@@ -97,6 +99,13 @@ function App() {
     console.log('handleClick');
     setIsClicked(true);
   };
+
+  // Reset isClicked on route change
+  useEffect(() => {
+    if (location.pathname === '/') {
+      setIsClicked(false);
+    }
+  }, [location]);
 
   return (
     <>
@@ -126,7 +135,6 @@ function App() {
           </Row>
         )}
 
-        <Router>
           <Routes>
             <Route
               path='/'
@@ -146,10 +154,15 @@ function App() {
                 />
               }></Route>
           </Routes>
-        </Router>
       </Container>
     </>
   );
 }
 
-export default App;
+const AppWithRouter = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWithRouter;
