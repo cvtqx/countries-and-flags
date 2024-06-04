@@ -7,6 +7,7 @@ import Header from './components/UI/Header';
 import { Col, Row, Container } from 'reactstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import countriesData from './data.json';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CountryDetail from './pages/CountryDetail';
@@ -21,8 +22,8 @@ function App() {
   const fetchAllCountries = async () => {
     setIsClicked(false) //WHY IS THIS NOT WORKING????
     try {
-      const response = await axios.get('https://restcountries.com/v3.1/all');
-      setCountries(response.data);
+      //const response = await axios.get('https://restcountries.com/v3.1/all');
+      setCountries(countriesData);
     } catch (error) {
       console.error('Error fetching countries', error);
     }

@@ -8,12 +8,12 @@ const FlagsList = ({ countries,  handleClick }) => {
     <Row className='m-5'>
       {countries.map((country, index) => (
         <Col
-          key={country.cca3}
+          key={country.alpha3Code}
           sm='12'
           md='6'
           lg='3'>
           <Link
-            to={`/country/${country.cca3}`}
+            to={`/country/${country.alpha3Code}`}
             style={{ textDecoration: 'none', color: 'inherit' }}>
             <FlagCard
               country={country}

@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 const BorderCountriesButtons = ({ borders, countries }) => {
     const navigate = useNavigate();
-    const borderCountries = borders.map(borderCountryCode => countries.find(country => country.cca3 === borderCountryCode))
+    const borderCountries = borders.map((borderCountryCode) =>
+      countries.find((country) => country.alpha3Code === borderCountryCode)
+    );
     console.log(borderCountries)
   return (
     <>
@@ -20,9 +22,9 @@ const BorderCountriesButtons = ({ borders, countries }) => {
         {borderCountries.map((borderCountry) => (
           <Button
             className='borderCountries-button'
-            key={`btn-${borderCountry.cca3}`}
-            onClick={()=>navigate(`/country/${borderCountry.cca3}`)}>
-            {borderCountry.name.common}
+            key={`btn-${borderCountry.alpha3Code}`}
+            onClick={() => navigate(`/country/${borderCountry.alpha3Code}`)}>
+            {borderCountry.name}
           </Button>
         ))}
       </Col>

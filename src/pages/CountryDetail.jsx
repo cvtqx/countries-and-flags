@@ -12,13 +12,13 @@ const CountryDetail = ({ countries, setIsClicked }) => {
     navigate(-1);
   };
 
-  const country = countries.find((country) => country.cca3 === countryId);
+  const country = countries.find((country) => country.alpha3Code === countryId);
   console.log(country);
 
   // const nativeName = country?.name?.nativeName
   // console.log(nativeName)
-  const currencies = Object.keys(country?.currencies).join(', ');
-  const languages = Object.values(country?.languages).join(', ');
+  const currencies = country?.currencies.map(currency => currency.code);
+  const languages = country?.languages.map(language => language.name)
   const borderCountries = country?.borders;
   console.log(borderCountries);
 
@@ -40,7 +40,7 @@ const CountryDetail = ({ countries, setIsClicked }) => {
           lg='5'>
           <img
             className='countryDetail-img'
-            alt={`Flag of ${country?.name?.common}`}
+            alt={`Flag of ${country?.name}`}
             src={country?.flags?.svg}
             width='100%'></img>
         </Col>
@@ -48,7 +48,7 @@ const CountryDetail = ({ countries, setIsClicked }) => {
           sm='12'
           lg='7'>
           <Row className='mt-2'>
-            <h1 style={{ fontWeight: 'bold' }}>{country?.name?.common}</h1>
+            <h1 style={{ fontWeight: 'bold' }}>{country?.name}</h1>
           </Row>
           <Row
             className='mt-2'
@@ -58,7 +58,8 @@ const CountryDetail = ({ countries, setIsClicked }) => {
               md='6'>
               <p>
                 <span style={{ fontWeight: 'bold' }}>Native Name:</span>{' '}
-                {''}
+                {country?.nativeName}
+
               </p>
               <p>
                 <span style={{ fontWeight: 'bold' }}>Population:</span>{' '}
@@ -96,7 +97,10 @@ const CountryDetail = ({ countries, setIsClicked }) => {
           </Row>
           {borderCountries && borderCountries.length > 0 ? (
             <Row className='mt-2'>
-              <BorderCountriesButtons borders={borderCountries} countries={countries} />
+              <BorderCountriesButtons
+                borders={borderCountries}
+                countries={countries}
+              />
             </Row>
           ) : null}
         </Col>

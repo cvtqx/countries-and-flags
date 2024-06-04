@@ -14,7 +14,7 @@ const FlagCard = ({ country, onClick }) => {
       onClick={onClick}>
       <img
         className='flagCard-img'
-        alt={`Flag of ${country.name.common}`}
+        alt={`Flag of ${country.name}`}
         src={country.flags.svg}
         width='100%'
         height='145px'
@@ -23,7 +23,7 @@ const FlagCard = ({ country, onClick }) => {
         <CardTitle
           tag='h5'
           style={{ fontWeight: 'bold' }}>
-          {country.name.common}
+          {country.name}
         </CardTitle>
         <CardText>
           <span style={{ fontWeight: 'bold' }}>Population:</span>{' '}
