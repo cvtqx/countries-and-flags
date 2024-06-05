@@ -20,9 +20,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - dark/light theme
 -  add display 20 and next button to flagslist
 - format population number
-- fix page reload when clicking back button and returning to home page, isClicked must be set to false
 - fix border countries buttons
-
 
 ## Overview
 

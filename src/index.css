@@ -15,7 +15,6 @@
   margin: 0;
   padding: 0;
   font-family: "Nunito Sans", sans-serif;
-  background-color: var(--clr-very-light-gray);
 }
 
 
@@ -62,21 +61,47 @@ input.form-control, button.btn{
   color: var(--clr-very-dark-blue-text);
 }
 
-body{
-  background-color: var(--clr-very-light-gray);
+body.light .card{
+  background-color: var(--clr-white);
   color: var(--clr-very-dark-blue-text);
 }
 
+
 /* dark theme */
-body.dark{
+.dark{
   background-color: var(--clr-very-dark-blue-background);
-  color: var(--clr-very-light-gray)
+  color: var(--clr-white);
 }
 
-input.form-control.dark, button.btn.dark{
-  border: none;
-  background-color: var(--clr-dark-gray);
+nav.dark{
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-white);
 }
+
+nav.dark .navbar-text{
+  color: inherit;
+}
+
+body.dark button, body.dark input{
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-white);
+}
+
+body.dark input::placeholder{
+  color: var(--clr-white);
+}
+
+body.dark input:focus{
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-white);
+}
+
+body.dark .card{
+  background-color: var(--clr-dark-blue);
+  color: var(--clr-white);
+}
+
+
 
 
 

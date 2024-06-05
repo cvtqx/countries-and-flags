@@ -8,13 +8,15 @@ const Header = ({ theme, toggleTheme }) => {
   return (
     <div>
       <Navbar
-        color={theme === 'light' ? 'light' : 'dark'}
-        light
         expand='md'
-        className='shadow-sm p-3 mb-5'
+        className={`shadow-sm p-3 mb-5 ${theme}`}
         width='100%'>
         <NavbarText className='fw-bold fs-4'>
-          <a href='/' style={{textDecoration: 'none', color:'inherit'}}>Where in the world?</a>
+          <a
+            href='/'
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            Where in the world?
+          </a>
         </NavbarText>
         <NavbarText
           className='fw-bold'
