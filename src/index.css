@@ -1,109 +1,100 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-:root{
- --clr-dark-blue: hsl(209, 23%, 22%);
- --clr-very-dark-blue-background: hsl(207, 26%, 17%);
- --clr-very-dark-blue-text: hsl(200, 15%, 8%);
- --clr-dark-gray: hsl(0, 0%, 52%);
- --clr-very-light-gray: hsl(0, 0%, 98%);
- --clr-white: hsl(0, 0%, 100%);
+:root {
+  --clr-dark-blue: hsl(209, 23%, 22%);
+  --clr-very-dark-blue-background: hsl(207, 26%, 17%);
+  --clr-very-dark-blue-text: hsl(200, 15%, 8%);
+  --clr-dark-gray: hsl(0, 0%, 52%);
+  --clr-very-light-gray: hsl(0, 0%, 98%);
+  --clr-white: hsl(0, 0%, 100%);
 }
 
-
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
-
-button.btn:focus{
+button.btn:focus {
   background-color: var(--clr-dark-gray);
 }
 
-button.btn.button-back{
+button.btn.button-back {
   width: 8rem;
   margin: 1rem;
 }
 
-button.btn.borderCountries-button{
-width: 30%;
-font-size:small;
-margin-top: 1rem;
-margin-left: 0.5rem
+button.btn.borderCountries-button {
+  width: 30%;
+  font-size: small;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
 }
 
-div.card{
+div.card {
   border: none;
   box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
 }
 
-
-.countryDetail-img{
+.countryDetail-img {
   height: 200px;
 }
 
 @media screen and (min-width: 600px) {
-  .countryDetail-img{
-  height: 280px;
-}
-button.btn.borderCountries-button{
-  margin-top:0;
-}
+  .countryDetail-img {
+    height: 280px;
+  }
+  button.btn.borderCountries-button {
+    margin-top: 0;
+  }
 }
 
 /* light theme */
-input.form-control, button.btn{
+input.form-control,
+button.btn {
   border: none;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px 0px;
   color: var(--clr-very-dark-blue-text);
 }
 
-body.light .card{
+body.light .card {
   background-color: var(--clr-white);
   color: var(--clr-very-dark-blue-text);
 }
 
-
 /* dark theme */
-.dark{
+.dark {
   background-color: var(--clr-very-dark-blue-background);
   color: var(--clr-white);
 }
 
-nav.dark{
+nav.dark {
   background-color: var(--clr-dark-blue);
   color: var(--clr-white);
 }
 
-nav.dark .navbar-text{
+nav.dark .navbar-text {
   color: inherit;
 }
 
-body.dark button, body.dark input{
+body.dark button,
+body.dark input {
   background-color: var(--clr-dark-blue);
   color: var(--clr-white);
 }
 
-body.dark input::placeholder{
+body.dark input::placeholder {
   color: var(--clr-white);
 }
 
-body.dark input:focus{
+body.dark input:focus {
   background-color: var(--clr-dark-blue);
   color: var(--clr-white);
 }
 
-body.dark .card{
+body.dark .card {
   background-color: var(--clr-dark-blue);
   color: var(--clr-white);
 }
-
-
-
-
-
-
-

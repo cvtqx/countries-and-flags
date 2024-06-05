@@ -8,7 +8,12 @@ import { Col, Row, Container } from 'reactstrap';
 import { useEffect, useState } from 'react';
 import countriesData from './data.json';
 
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useLocation,
+} from 'react-router-dom';
 import CountryDetail from './pages/CountryDetail';
 
 function App() {
@@ -20,9 +25,7 @@ function App() {
 
   const location = useLocation();
 
-  console.log(isClicked)
   const fetchAllCountries = async () => {
-   //WHY IS THIS NOT WORKING????
     try {
       setCountries(countriesData);
     } catch (error) {
@@ -135,25 +138,25 @@ function App() {
           </Row>
         )}
 
-          <Routes>
-            <Route
-              path='/'
-              element={
-                <FlagsList
-                  countries={countries}
-                  isClicked={isClicked}
-                  handleClick={handleClick}
-                />
-              }></Route>
-            <Route
-              path='/country/:countryId'
-              element={
-                <CountryDetail
-                  countries={countries}
-                  setIsClicked={setIsClicked}
-                />
-              }></Route>
-          </Routes>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <FlagsList
+                countries={countries}
+                isClicked={isClicked}
+                handleClick={handleClick}
+              />
+            }></Route>
+          <Route
+            path='/country/:countryId'
+            element={
+              <CountryDetail
+                countries={countries}
+                setIsClicked={setIsClicked}
+              />
+            }></Route>
+        </Routes>
       </Container>
     </>
   );

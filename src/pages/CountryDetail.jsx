@@ -3,8 +3,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Button, Col, Row } from 'reactstrap';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import BorderCountriesButtons from '../components/UI/BorderCountriesButtons';
+import countriesData from '../data.json';
 
-const CountryDetail = ({ countries, setIsClicked }) => {
+const CountryDetail = () => {
   const { countryId } = useParams();
   let navigate = useNavigate();
 
@@ -12,7 +13,9 @@ const CountryDetail = ({ countries, setIsClicked }) => {
     navigate(-1);
   };
 
-  const country = countries.find((country) => country.alpha3Code === countryId);
+  const country = countriesData.find(
+    (country) => country.alpha3Code === countryId
+  );
 
   const currencies = country?.currencies
     .map((currency) => currency.code)
@@ -82,7 +85,7 @@ const CountryDetail = ({ countries, setIsClicked }) => {
               md='6'>
               <p>
                 <span style={{ fontWeight: 'bold' }}>Top Level Domain:</span>{' '}
-                {country?.tld}
+                {country?.topLevelDomain}
               </p>
               <p>
                 <span style={{ fontWeight: 'bold' }}>Currencies:</span>{' '}
@@ -96,10 +99,7 @@ const CountryDetail = ({ countries, setIsClicked }) => {
           </Row>
           {borderCountries && borderCountries.length > 0 ? (
             <Row className='mt-2'>
-              <BorderCountriesButtons
-                borders={borderCountries}
-                countries={countries}
-              />
+              <BorderCountriesButtons borders={borderCountries} />
             </Row>
           ) : null}
         </Col>

@@ -1,13 +1,14 @@
 import React from 'react';
 import { Button, Col } from 'reactstrap';
 import { useNavigate } from 'react-router-dom';
+import countriesData from '../../data.json';
 
-const BorderCountriesButtons = ({ borders, countries }) => {
-    const navigate = useNavigate();
-    const borderCountries = borders.map((borderCountryCode) =>
-      countries.find((country) => country.alpha3Code === borderCountryCode)
-    );
-    console.log(borderCountries)
+const BorderCountriesButtons = ({ borders }) => {
+  const navigate = useNavigate();
+
+  const borderCountries = borders.map((borderCountryCode) =>
+    countriesData.find((country) => country.alpha3Code === borderCountryCode)
+  );
   return (
     <>
       <Col
