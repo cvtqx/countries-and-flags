@@ -1,39 +1,33 @@
-# Frontend Mentor - REST Countries API with color theme switcher solution
-
-This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+# REST Countries API with color theme switcher 
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [Functionality](#functionality)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
+  - [Available scripts](#available-scripts)
 - [Author](#author)
 
-## TO DO
+<!-- ## TO DO
 
 - dark/light theme
 -  add display 20 and next button to flagslist
 - format population number
-- fix border countries buttons
+- fix border countries buttons -->
 
 ## Overview
 
-### The challenge
+### Functionality
 
-Users should be able to:
+Use this application to:
 
 - See all countries from the API on the homepage
 - Search for a country using an `input` field
 - Filter countries by region
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode *(optional)*
+- Toggle the color scheme between light and dark mode 
 
 ### Screenshot
 
@@ -51,7 +45,6 @@ Mobile view:
 - Solution URL: [Github](https://github.com/cvtqx/countries-and-flags)
 - Live Site URL: [https://countries-and-flags.onrender.com/](https://countries-and-flags.onrender.com/)
 
-## My process
 
 ### Built with
 
@@ -61,15 +54,16 @@ Mobile view:
 - React Router
 
 
-### What I learned
+## Available Scripts
 
+In the project directory, you can run:
 
-### Continued development
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Useful resources
-
-
+The page will reload when you make changes.
 
 ## Author
 
