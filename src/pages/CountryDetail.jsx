@@ -4,6 +4,7 @@ import { Button, Col, Row } from 'reactstrap';
 import { FaArrowLeftLong } from 'react-icons/fa6';
 import BorderCountriesButtons from '../components/UI/BorderCountriesButtons';
 import countriesData from '../data.json';
+import findCountryById from '../utils/findCountryById';
 
 const CountryDetail = () => {
   const { countryId } = useParams();
@@ -13,9 +14,7 @@ const CountryDetail = () => {
     navigate(-1);
   };
 
-  const country = countriesData.find(
-    (country) => country.alpha3Code === countryId
-  );
+  const country = findCountryById(countriesData, countryId);
 
   const currencies = country?.currencies
     .map((currency) => currency.code)
