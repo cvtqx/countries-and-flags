@@ -24,7 +24,8 @@ const BorderCountriesButtons = ({ borders }) => {
           <Button
             className='borderCountries-button'
             key={`btn-${borderCountry?.alpha3Code}`}
-            onClick={() => navigate(`/country/${borderCountry?.alpha3Code}`)}>
+            onClick={() => navigate(`/country/${borderCountry?.alpha3Code}`)}
+          style={{marginBottom: '1rem'}}>
             {borderCountry?.name}
           </Button>
         ))}
