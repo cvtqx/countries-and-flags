@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardBody, CardText, CardTitle } from 'reactstrap';
+import './FlagCard.css'
 
 const FlagCard = ({ country, onClick }) => {
   return (
