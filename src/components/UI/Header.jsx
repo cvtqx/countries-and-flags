@@ -20,6 +20,7 @@ const Header = ({ theme, toggleTheme }) => {
         </NavbarText>
         <NavbarText
           className='fw-bold'
+          style={{ cursor:'pointer' }}
           onClick={toggleTheme}>
           {theme === 'light' ? (
             <div>
